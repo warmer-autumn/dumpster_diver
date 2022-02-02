@@ -1,0 +1,14 @@
+{
+  "name": "dumpster_diver",
+  "version": "1.0.0",
+  "description": "this collects trash and shares it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "warmer_autumn",
+  "license": "ISC",
+  "dependencies": {
+    "@zuzak/owo": "^1.15.0"
+  }
+}
