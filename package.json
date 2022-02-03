@@ -4,11 +4,20 @@
   "description": "this collects trash and shares it",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel index.js -d dist",
+    "start": "npm run build && node dist/index.js"
   },
   "author": "warmer_autumn",
   "license": "ISC",
   "dependencies": {
-    "@zuzak/owo": "^1.15.0"
+    "@zuzak/owo": "^1.15.0",
+    "node-fetch": "2.6.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.0",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11"
   }
 }
