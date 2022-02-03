@@ -7,15 +7,18 @@ function randomInteger(min, max) {
 }
 
 const discordPost = async (title) => {
-    const hook = {content: title}
+    const body = {
+        content: title,
+        tts : true
+    }
     const response = await fetch(
         webhook_url,
         {
             method: 'post',
-            body: JSON.stringify(hook),
+            body: JSON.stringify(body),
             headers: {'Content-Type': 'application/json'}
         })
-    console.log(response)
+        
 } 
 
 const main = async () => {
@@ -44,7 +47,7 @@ const main = async () => {
     // }
     const post = posts[rando].data
     console.log(owo(post.title), post.url)
-    await discordPost(owo(post.title))
+    await discordPost(owo(post.title)+ ' ' + post.url)
 }
 
 
