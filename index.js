@@ -12,10 +12,13 @@ function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-const discordPost = async (title) => {
+const discordPost = async (title, url) => {
     const body = {
         content: title,
-        tts : true
+        // embeds: {
+        //     "image":{"url" : url}
+        // },
+        tts : true,
     }
     const response = await fetch(
         webhook_url,
@@ -25,7 +28,7 @@ const discordPost = async (title) => {
             headers: {'Content-Type': 'application/json'}
         })
         
-} 
+}
 
 const main = async () => {
     const response = await fetch('https://api.reddit.com/r/196')
@@ -53,9 +56,12 @@ const main = async () => {
     // }
     const post = posts[rando].data
     console.log(owo(post.title), post.url)
-    await discordPost(owo(post.title)+ ' ' + post.url)
-}
+    
+    
+    await discordPost(owo(post.title), post.url)}
+    //# await discordPost(owo(post.title)+ ' ' + post.url) this is a backup in case I fuck up the statement
 
+// Need to separate this post to make an embed for both content and images ^^^^^^^
 
 
 
