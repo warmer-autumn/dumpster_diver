@@ -1,6 +1,12 @@
+const dotenv = require("dotenv")
+
+dotenv.config()
+
 import fetch from 'node-fetch'
+const webhook_url = process.env.WEBHOOK
+
 const owo = require('@zuzak/owo')
-const webhook_url = 'https://discord.com/api/webhooks/938884396872769586/TnGhEcS5kvdr77NBIJHZZID_oJMyv5vC-N67rQ3vyfYC2AxNkpN-wJruTQI5bR2qnqNw'
+console.log(webhook_url)
 
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
