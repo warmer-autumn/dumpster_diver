@@ -14,10 +14,12 @@ function randomInteger(min, max) {
 
 const discordPost = async (title, url) => {
     const body = {
-        content: title,
-        // embeds: {
-        //     "image":{"url" : url}
-        // },
+        //content: title,
+        embeds: [{
+            title : title,
+            "image":{"url" : url},
+            //url : url,
+        }],
         tts : true,
     }
     const response = await fetch(
@@ -27,7 +29,7 @@ const discordPost = async (title, url) => {
             body: JSON.stringify(body),
             headers: {'Content-Type': 'application/json'}
         })
-        
+    console.log(response.ok)
 }
 
 const main = async () => {
